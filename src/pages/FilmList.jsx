@@ -13,7 +13,8 @@ export default function FilmList() {
         it: 'it',
         fr: 'fr',
         ja: 'jp',
-        ru: 'ru'
+        ru: 'ru',
+        zh: 'cn'
     }
 
     return (
