@@ -7,7 +7,14 @@ import Flag from "react-world-flags";
 export default function FilmList() {
     const { movies } = useContext(CallMovieContext); // variabile accesso a context
 
-    // mappa le bandiere (array iniziale?)
+    // mappa le bandiere (oggetto iniziale?)
+    const languageFlags = {
+        en: 'gb',
+        it: 'it',
+        fr: 'fr',
+        ja: 'jp',
+        ru: 'ru'
+    }
 
     return (
         <>
@@ -24,7 +31,8 @@ export default function FilmList() {
                     </p>
                     <p>
                         {/* sostituisci con flag, togli lo style dopo */}
-                        Lingua: <Flag code={movie.original_language} style={{height: 20}}/>
+                        Lingua: {movie.original_language}
+                        Lingua: <Flag code={languageFlags[movie.original_language]} style={{height: 20}}/>
                     </p>
                     <p>
                         Voto: {movie.vote_average}
