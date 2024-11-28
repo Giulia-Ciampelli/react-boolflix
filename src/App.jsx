@@ -1,15 +1,37 @@
-import './App.css'
+// #region importazioni
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// layout
+import DefaulLayout from './pages/DefaultLayout';
+
+// pagine
+import Home from './pages/Home.jsx';
+import FilmList from './pages/FilmList.jsx';
+import About from './pages/About.jsx';
+
+// componenti
+
+// context
+
+// stile
+import './App.css';
+
+// #endregion importazioni
 
 function App() {
 
   return (
     <>
-      {/* ORGANIZZAZIONE APP:
-      HOME: pagina benvenuto?
-      ABOUT: pagina contattare?
-      FILMLIST: mostra una serie di film grazie a chiamata ajax (fatta nel context)
-      SEARCHBAR: sottocomponente che sarà usato nell'header (mettere i link dentro?)
-      FILMCARD: card che sarà mostrata al click sul film, pagina */}
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaulLayout />}>
+            <Route path='/' element={<Home />}/>
+            <Route path='/films' element={<FilmList />}/>
+            {/* <Route path='/' element={<Home />}/> // questa sarà la rotta della FilmCard */}
+            <Route path='/about' element={<About />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

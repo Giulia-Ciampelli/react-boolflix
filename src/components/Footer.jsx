@@ -1,2 +1,10 @@
 // qui sarà il footer
-// questa apllicazione non ti rovina l'M2!
+export default function Footer() {
+    <>
+        <footer>
+            <p>
+                questa apllicazione non ti rovina l'M2!
+            </p>
+        </footer>
+    </>
+}
