@@ -1,11 +1,13 @@
 import { useContext } from "react";
-// import Flag from "react-world-flags";
 
 // context
 import CallMovieContext from "../contexts/CallMovieContext.jsx";
+import Flag from "react-world-flags";
 
 export default function FilmList() {
     const { movies } = useContext(CallMovieContext); // variabile accesso a context
+
+    // mappa le bandiere (array iniziale?)
 
     return (
         <>
@@ -21,9 +23,8 @@ export default function FilmList() {
                         Titolo originale: {movie.original_title}
                     </p>
                     <p>
-                        {/* sostituisci con flag */}
-                        Lingua: {movie.original_language}
-                        {/* <Flag code={codice a due lettere dato da movie.original_language}/> */}
+                        {/* sostituisci con flag, togli lo style dopo */}
+                        Lingua: <Flag code={movie.original_language} style={{height: 20}}/>
                     </p>
                     <p>
                         Voto: {movie.vote_average}
