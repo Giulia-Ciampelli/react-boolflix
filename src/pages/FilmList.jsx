@@ -17,7 +17,9 @@ export default function FilmList() {
         zh: 'cn',
         de: 'de',
         cs: 'cz',
-        es: 'es'
+        es: 'es',
+        ko: 'kr',
+        ta: 'in'
     }
 
     return (
