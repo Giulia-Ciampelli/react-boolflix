@@ -1,4 +1,24 @@
+import { useState, useContext } from "react";
+
+// context
+import CallMovieContext from "../contexts/CallMovieContext.jsx";
+
 export default function SearchBar() {
+    const [query, setQuery] = useState('');
+    const {setQueryInContext} = useContext(CallMovieContext); // variabile context
+
+    // funzione onChange
+    const handleSearchChange = (e) => {
+        console.log(e.target.value);
+        setQuery(e.target.value);
+    }
+
+    // funzione form
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        setQueryInContext(query); // aggiornamento query del context
+    }
+
     return (
         <>
             <form onSubmit={handleSearchSubmit}>
