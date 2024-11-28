@@ -5,7 +5,7 @@ import { useContext } from "react";
 import CallMovieContext from "../contexts/CallMovieContext.jsx";
 
 export default function FilmList() {
-    const {movies} = useContext(CallMovieContext); // variabile accesso a context
+    const { movies } = useContext(CallMovieContext); // variabile accesso a context
 
     return (
         <>
@@ -14,7 +14,18 @@ export default function FilmList() {
             </h1>
             <ul>
                 {movies.map(movie => (<li key={movie.id}>
-                    {movie.title}
+                    <p>
+                        Titolo: {movie.title}
+                    </p>
+                    <p>
+                        Titolo originale: {movie.original_title}
+                    </p>
+                    <p>
+                        Lingua: {movie.original_language}
+                    </p>
+                    <p>
+                        Voto: {movie.vote_average}
+                    </p>
                 </li>))}
             </ul>
             {/* <Link to={FilmCard}>
