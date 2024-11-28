@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
 
 // context
-import CallMovieContext from "../contexts/CallMovieContext.jsx";
+import CallResultsContext from "../contexts/CallResultsContext.jsx";
 
 export default function SearchBar() {
     const [query, setQuery] = useState('');
-    const {setQueryInContext} = useContext(CallMovieContext); // variabile context
+    const {setQueryInContext} = useContext(CallResultsContext); // variabile context
 
     // funzione onChange
     const handleSearchChange = (e) => {

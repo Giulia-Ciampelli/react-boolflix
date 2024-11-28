@@ -1,10 +1,10 @@
 import { createContext, useState, useEffect } from "react";
 
 // crea un context
-const CallMovieContext = createContext();
+const CallResultsContext = createContext();
 
 // componente provider
-export const CallMovieProvider = ({ children }) => {
+export const CallResultsProvider = ({ children }) => {
     const [movies, setMovies] = useState([]); // variabile fetch
     const [query, setQuery] = useState(''); // variabile query
     const url = import.meta.env.VITE_BASE_URL;
@@ -30,10 +30,10 @@ export const CallMovieProvider = ({ children }) => {
 
     // ritorna il provider con cui incapsulare l'app (o i componenti dell'app)
     return (
-        <CallMovieContext.Provider value={{ movies, setQueryInContext }}>
+        <CallResultsContext.Provider value={{ movies, setQueryInContext }}>
             {children}
-        </CallMovieContext.Provider>
+        </CallResultsContext.Provider>
     )
 }
 
-export default CallMovieContext;
+export default CallResultsContext;

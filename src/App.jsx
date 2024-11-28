@@ -10,7 +10,7 @@ import FilmList from './pages/FilmList.jsx';
 // import About from './pages/About.jsx';
 
 // context
-import { CallMovieProvider } from './contexts/CallMovieContext.jsx';
+import { CallResultsProvider } from './contexts/CallResultsContext.jsx';
 
 // stile
 import './App.css';
@@ -20,7 +20,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <CallMovieProvider>
+      <CallResultsProvider>
         <BrowserRouter>
           <Routes>
             <Route element={<DefaulLayout />}>
@@ -33,7 +33,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </CallMovieProvider>
+      </CallResultsProvider>
     </>
   )
 }

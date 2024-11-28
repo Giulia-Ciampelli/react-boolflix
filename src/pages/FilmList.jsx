@@ -1,11 +1,11 @@
 import { useContext } from "react";
 
 // context
-import CallMovieContext from "../contexts/CallMovieContext.jsx";
+import CallResultsContext from "../contexts/CallResultsContext.jsx";
 import Flag from "react-world-flags";
 
 export default function FilmList() {
-    const { movies } = useContext(CallMovieContext); // variabile accesso a context
+    const { movies } = useContext(CallResultsContext); // variabile accesso a context
 
     // mappa le bandiere (oggetto iniziale?)
     const languageFlags = {
