@@ -5,11 +5,18 @@ import CallResultsContext from "../contexts/CallResultsContext.jsx";
 
 export default function SearchBar() {
     const [query, setQuery] = useState('');
-    const {setQueryInContext} = useContext(CallResultsContext); // variabile context
+    const { setQueryInContext, changeSearchType } = useContext(CallResultsContext); // variabile context, RICORDA: aggiungi anche la funzione per cambiare il tipo di ricerca
+    const [searchType, setSearchType] = useState('movie'); // variabile scelta rotta
 
-    // funzione onChange
+    // funzione onChange query
     const handleSearchChange = (e) => {
         setQuery(e.target.value);
+    }
+
+    // funxione onChange select
+    const handleTypeChange = (e) => {
+        setSearchType(e.target.value);
+        changeSearchType(e.target.value);
     }
 
     // funzione form
@@ -27,6 +34,17 @@ export default function SearchBar() {
                     placeholder="Scrivi il titolo di un film..."
                     value={query}
                     onChange={handleSearchChange} />
+                <select
+                    id="searchType"
+                    value={searchType}
+                    onChange={handleTypeChange}>
+                    <option value="movie">
+                        Film
+                    </option>
+                    <option value="tv">
+                        Serie TV
+                    </option>
+                </select>
                 <button type="submit">
                     Cerca
                 </button>

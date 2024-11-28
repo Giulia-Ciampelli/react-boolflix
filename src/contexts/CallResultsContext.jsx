@@ -7,9 +7,10 @@ const CallResultsContext = createContext();
 export const CallResultsProvider = ({ children }) => {
     const [movies, setMovies] = useState([]); // variabile fetch
     const [query, setQuery] = useState(''); // variabile query
+    const [searchType, setSearchType] = useState('movie'); // variabile scelta rotta
     const url = import.meta.env.VITE_BASE_URL;
     const movieRoute = import.meta.env.VITE_MOVIE_ROUTE;
-    // const seriesRoute = import.meta.env.VITE_MOVIE_SERIES;
+    const seriesRoute = import.meta.env.VITE_MOVIE_SERIES;
     const key = import.meta.env.VITE_API_KEY;
 
     // funzione per query
@@ -17,13 +18,18 @@ export const CallResultsProvider = ({ children }) => {
         setQuery(newQuery); // aggiornamento stato query
     }
 
-    // cerca come rendere sia /movie che /tv
+    // funzione per cambio categoria
+    const changeSearchType = (type) => {
+        setSearchType(type);
+    }
 
     useEffect(() => {
         if(query === '') return;
 
+        const route = searchType === 'movie' ? movieRoute : seriesRoute; // variabile rotta dinamica
+
         // funzione fetch con valore query
-        fetch(`${url}/${movieRoute}?api_key=${key}&query=${query}`)
+        fetch(`${url}/${route}?api_key=${key}&query=${query}`)
             .then(res => res.json())
             .then(data => { setMovies(data.results) })
             .catch(err => {
@@ -33,7 +39,7 @@ export const CallResultsProvider = ({ children }) => {
 
     // ritorna il provider con cui incapsulare l'app (o i componenti dell'app)
     return (
-        <CallResultsContext.Provider value={{ movies, setQueryInContext }}>
+        <CallResultsContext.Provider value={{ movies, setQueryInContext, changeSearchType }}>
             {children}
         </CallResultsContext.Provider>
     )
