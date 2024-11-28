@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
 import { useContext } from "react";
+// import Flag from "react-world-flags";
 
 // context
 import CallMovieContext from "../contexts/CallMovieContext.jsx";
@@ -21,7 +21,9 @@ export default function FilmList() {
                         Titolo originale: {movie.original_title}
                     </p>
                     <p>
+                        {/* sostituisci con flag */}
                         Lingua: {movie.original_language}
+                        {/* <Flag code={codice a due lettere dato da movie.original_language}/> */}
                     </p>
                     <p>
                         Voto: {movie.vote_average}

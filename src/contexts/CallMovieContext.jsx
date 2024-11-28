@@ -1,12 +1,9 @@
-// qui andrà la chiamata ajax, stessa cosa fatta ieri notte?
-
-// importa createcontext, usestate e useeffect
 import { createContext, useState, useEffect } from "react";
 
 // crea un context
 const CallMovieContext = createContext();
 
-// crea ed esporta il componente provider
+// componente provider
 export const CallMovieProvider = ({ children }) => {
     const [movies, setMovies] = useState([]); // variabile fetch
     const [query, setQuery] = useState(''); // variabile query
@@ -17,7 +14,6 @@ export const CallMovieProvider = ({ children }) => {
         setQuery(newQuery); // aggiornamento stato query
     }
 
-    // crea funzione fetch (RICORDA: separa il link in baseUrl e APIKey e forse anche query? al momento metto un link con query per testare la chiamata)
     useEffect(() => {
         if(query === '') return;
 
@@ -29,8 +25,6 @@ export const CallMovieProvider = ({ children }) => {
                 console.log(err);
             })
     }, [query])
-
-    // modifica per rendere le query dinamiche
 
     // ritorna il provider con cui incapsulare l'app (o i componenti dell'app)
     return (

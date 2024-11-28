@@ -9,7 +9,6 @@ export default function SearchBar() {
 
     // funzione onChange
     const handleSearchChange = (e) => {
-        console.log(e.target.value);
         setQuery(e.target.value);
     }
 
