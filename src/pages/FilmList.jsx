@@ -14,13 +14,16 @@ export default function FilmList() {
         fr: 'fr',
         ja: 'jp',
         ru: 'ru',
-        zh: 'cn'
+        zh: 'cn',
+        de: 'de',
+        cs: 'cz',
+        es: 'es'
     }
 
     return (
         <>
             <h1>
-                Qui sarà la lista dei film
+                Film trovati:
             </h1>
             <ul>
                 {movies.map(movie => (<li key={movie.id}>

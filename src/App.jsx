@@ -25,7 +25,9 @@ function App() {
           <Routes>
             <Route element={<DefaulLayout />}>
               {/* <Route path='/' element={<Home />}/> */}
-              <Route path='/films' element={<FilmList />} />
+
+              {/* RICORDA: cambia la rotta in /film in seguito */}
+              <Route path='/' element={<FilmList />} />
               {/* <Route path='/' element={<Home />}/> // questa sarà la rotta della FilmCard */}
               {/* <Route path='/about' element={<About />}/> */}
             </Route>

@@ -14,6 +14,8 @@ export const CallMovieProvider = ({ children }) => {
         setQuery(newQuery); // aggiornamento stato query
     }
 
+    // cerca come rendere sia /movie che /tv
+
     useEffect(() => {
         if(query === '') return;
 
