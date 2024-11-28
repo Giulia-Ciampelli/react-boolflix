@@ -1,7 +1,6 @@
 // qui sarà l'header
-// collegamenti:
-// <NavBar /> + <SearchBar />
 import NavBar from "./NavBar.jsx";
+// import SearchBar from "./SearchBar.jsx";
 
 export default function Header() {
     return(

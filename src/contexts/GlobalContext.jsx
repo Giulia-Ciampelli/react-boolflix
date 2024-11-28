@@ -1,1 +1,0 @@
-// qui andrà la chiamata ajax, stessa cosa fatta ieri notte?

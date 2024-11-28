@@ -9,8 +9,6 @@ import Home from './pages/Home.jsx';
 import FilmList from './pages/FilmList.jsx';
 import About from './pages/About.jsx';
 
-// componenti
-
 // context
 
 // stile
