@@ -1,12 +1,15 @@
 // qui sarà l'header
-import NavBar from "./NavBar.jsx";
+// import NavBar from "./NavBar.jsx";
 // import SearchBar from "./SearchBar.jsx";
 
 export default function Header() {
     return(
         <>
             <header>
-                <NavBar />
+                <h1>
+                    BoolFlix
+                </h1>
+                {/* <NavBar /> */}
             </header>
         </>
     )
