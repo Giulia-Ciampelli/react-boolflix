@@ -115,7 +115,7 @@ main {
                     max-width: 100%;
                     height: 100%;
                     padding: .75rem;
-                    overflow: auto;
+                    overflow: hidden;
 
                     p {
                         padding: .5rem 0;
