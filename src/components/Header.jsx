@@ -2,14 +2,19 @@
 // import NavBar from "./NavBar.jsx";
 import SearchBar from "./SearchBar.jsx";
 
+// logo
+import HeaderLogo from "../assets/header-logo.png";
+
 export default function Header() {
-    return(
+    return (
         <>
             <header>
-                <h1>
-                    BoolFlix
-                </h1>
-                <SearchBar />
+                <div className="logo">
+                    <img src={HeaderLogo} alt="" />
+                </div>
+                <div className="search">
+                    <SearchBar />
+                </div>
             </header>
         </>
     )

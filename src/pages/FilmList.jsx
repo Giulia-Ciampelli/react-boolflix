@@ -12,7 +12,7 @@ import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // 
 export default function FilmList() {
     const { movies } = useContext(CallResultsContext); // variabile accesso a context
     const { searchType } = useContext(CallResultsContext); // variabile cambio tipo
-    const imgUrl = 'https://image.tmdb.org/t/p/w500'; // variabile url immagine
+    const imgUrl = 'https://image.tmdb.org/t/p/w342'; // variabile url immagine
 
     // mappa bandiere
     const languageFlags = {
@@ -40,49 +40,55 @@ export default function FilmList() {
 
     return (
         <>
-            <h1>
-                {searchType === 'movie' ? 'Film trovati:' : 'Serie TV trovate:'}
-            </h1>
-            <ul>
-                {movies.map(movie => {
+            <div className="container">
+                <h1>
+                    {searchType === 'movie' ? 'Film trovati:' : 'Serie TV trovate:'}
+                </h1>
+                <div className="row">
+                    <div className="card">
+                        <ul>
+                            {movies.map(movie => {
 
-                    // calcolo per voto
-                    const starVote = Math.ceil(movie.vote_average / 2);
+                                // calcolo per voto
+                                const starVote = Math.ceil(movie.vote_average / 2);
 
-                    // calcolo stelle vuote
-                    const emptyStars = 5 - starVote;
+                                // calcolo stelle vuote
+                                const emptyStars = 5 - starVote;
 
-                    return (<li key={movie.id}>
-                        <p>
-                            Titolo: {searchType === 'movie' ? movie.title : movie.name}
-                        </p>
-                        <p>
-                            Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
-                        </p>
-                        <p>
-                            {/* sostituisci con flag, togli lo style dopo */}
-                            Lingua: {movie.original_language}
-                            Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
-                        </p>
-                        <p>
-                            Voto:
+                                return (<li key={movie.id}>
+                                    <p>
+                                        Titolo: {searchType === 'movie' ? movie.title : movie.name}
+                                    </p>
+                                    <p>
+                                        Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
+                                    </p>
+                                    <p>
+                                        {/* sostituisci con flag, togli lo style dopo */}
+                                        Lingua: {movie.original_language}
+                                        Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
+                                    </p>
+                                    <p>
+                                        Voto:
 
-                            {/* rendering stelle piene */}
-                            {Array.from({ length: starVote }).map((_, index) => (
-                                <FontAwesomeIcon key={index} icon={faStarFull} style={{ color: "#FFD43B", }} />
-                            ))}
+                                        {/* rendering stelle piene */}
+                                        {Array.from({ length: starVote }).map((_, index) => (
+                                            <FontAwesomeIcon key={index} icon={faStarFull} style={{ color: "#FFD43B", }} />
+                                        ))}
 
-                            {/* rendering stelle vuote */}
-                            {Array.from({ length: emptyStars }).map((_, index) => (
-                                <FontAwesomeIcon key={starVote + index} icon={faStarEmpty} style={{ color: "#FFD43B", }} />
-                            ))}
-                        </p>
-                        <div className="copertina">
-                            <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
-                        </div>
-                    </li>)
-                })}
-            </ul>
+                                        {/* rendering stelle vuote */}
+                                        {Array.from({ length: emptyStars }).map((_, index) => (
+                                            <FontAwesomeIcon key={starVote + index} icon={faStarEmpty} style={{ color: "#FFD43B", }} />
+                                        ))}
+                                    </p>
+                                    <div className="copertina">
+                                        <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
+                                    </div>
+                                </li>)
+                            })}
+                        </ul>
+                    </div>
+                </div>
+            </div>
             {/* <Link to={FilmCard}>
                 filmCard
             </Link> */}

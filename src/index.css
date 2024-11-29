@@ -1,1 +1,68 @@
 /* stile globale */
+
+/* #region common */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* #endregion common */
+
+/* #region header */
+header {
+
+    .logo {
+
+    }
+
+    .search {
+        
+        form {
+
+            input {
+
+            }
+
+            select {
+
+            }
+
+            button {
+
+            }
+        }
+    }
+}
+/* #endregion header */
+
+/* #region main */
+main {
+
+    .container {
+
+        .row {
+
+            .card {
+
+                /* RICORDA: modificalo dopo */
+                ul {
+
+                    li {
+
+                    }
+                }
+            }
+        }
+    }
+}
+/* #endregion main */
+
+/* #region footer */
+footer {
+
+    p {
+        
+    }
+}
+/* #endregion footer */
