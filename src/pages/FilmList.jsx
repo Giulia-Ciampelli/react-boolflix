@@ -68,12 +68,12 @@ export default function FilmList() {
                             Voto:
 
                             {/* rendering stelle piene */}
-                            {Array.from({ length: starVote }).map((index) => (
+                            {Array.from({ length: starVote }).map((_, index) => (
                                 <FontAwesomeIcon key={index} icon={faStarFull} style={{ color: "#FFD43B", }} />
                             ))}
 
                             {/* rendering stelle vuote */}
-                            {Array.from({ length: emptyStars }).map((index) => (
+                            {Array.from({ length: emptyStars }).map((_, index) => (
                                 <FontAwesomeIcon key={starVote + index} icon={faStarEmpty} style={{ color: "#FFD43B", }} />
                             ))}
                         </p>

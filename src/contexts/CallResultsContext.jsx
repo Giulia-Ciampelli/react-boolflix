@@ -9,8 +9,8 @@ export const CallResultsProvider = ({ children }) => {
     const [query, setQuery] = useState(''); // variabile query
     const [searchType, setSearchType] = useState('movie'); // variabile scelta rotta
     const url = import.meta.env.VITE_BASE_URL;
-    const movieRoute = import.meta.env.VITE_MOVIE_ROUTE;
-    const seriesRoute = import.meta.env.VITE_SERIES_ROUTE;
+    const movieRoute = 'movie';
+    const seriesRoute = 'tv';
     const key = import.meta.env.VITE_API_KEY;
 
     // funzione per query
