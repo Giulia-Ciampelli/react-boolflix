@@ -44,27 +44,44 @@ export default function FilmList() {
                 {searchType === 'movie' ? 'Film trovati:' : 'Serie TV trovate:'}
             </h1>
             <ul>
-                {movies.map(movie => (<li key={movie.id}>
-                    <p>
-                        Titolo: {searchType === 'movie' ? movie.title : movie.name}
-                    </p>
-                    <p>
-                        Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
-                    </p>
-                    <p>
-                        {/* sostituisci con flag, togli lo style dopo */}
-                        Lingua: {movie.original_language}
-                        Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
-                    </p>
-                    <p>
-                        Voto: {movie.vote_average}
-                        stella piena: <FontAwesomeIcon icon={faStarFull} style={{color: "#FFD43B",}} />
-                        stella vuota: <FontAwesomeIcon icon={faStarEmpty} style={{color: "#FFD43B",}} />
-                    </p>
-                    <div className="copertina">
-                        <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
-                    </div>
-                </li>))}
+                {movies.map(movie => {
+
+                    // calcolo per voto
+                    const starVote = Math.ceil(movie.vote_average / 2);
+
+                    // calcolo stelle vuote
+                    const emptyStars = 5 - starVote;
+
+                    return (<li key={movie.id}>
+                        <p>
+                            Titolo: {searchType === 'movie' ? movie.title : movie.name}
+                        </p>
+                        <p>
+                            Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
+                        </p>
+                        <p>
+                            {/* sostituisci con flag, togli lo style dopo */}
+                            Lingua: {movie.original_language}
+                            Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
+                        </p>
+                        <p>
+                            Voto:
+
+                            {/* rendering stelle piene */}
+                            {Array.from({ length: starVote }).map((index) => (
+                                <FontAwesomeIcon key={index} icon={faStarFull} style={{ color: "#FFD43B", }} />
+                            ))}
+
+                            {/* rendering stelle vuote */}
+                            {Array.from({ length: emptyStars }).map((index) => (
+                                <FontAwesomeIcon key={starVote + index} icon={faStarEmpty} style={{ color: "#FFD43B", }} />
+                            ))}
+                        </p>
+                        <div className="copertina">
+                            <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
+                        </div>
+                    </li>)
+                })}
             </ul>
             {/* <Link to={FilmCard}>
                 filmCard
