@@ -6,8 +6,9 @@ import Flag from "react-world-flags";
 
 export default function FilmList() {
     const { movies } = useContext(CallResultsContext); // variabile accesso a context
+    const {searchType} = useContext(CallResultsContext); // variabile cambio tipo
 
-    // mappa le bandiere (oggetto iniziale?)
+    // mappa bandiere
     const languageFlags = {
         en: 'gb',
         it: 'it',
@@ -22,18 +23,25 @@ export default function FilmList() {
         ta: 'in'
     }
 
+    // test per array
+    if(!Array.isArray(movies)) {
+        return <div>
+            No results found
+        </div>
+    }
+
     return (
         <>
             <h1>
-                Film trovati:
+                {searchType === 'movie' ? 'Film trovati:' : 'Serie TV trovate:'}
             </h1>
             <ul>
                 {movies.map(movie => (<li key={movie.id}>
                     <p>
-                        Titolo: {movie.title}
+                        Titolo: {searchType === 'movie' ? movie.title : movie.name}
                     </p>
                     <p>
-                        Titolo originale: {movie.original_title}
+                        Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
                     </p>
                     <p>
                         {/* sostituisci con flag, togli lo style dopo */}
