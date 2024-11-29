@@ -20,7 +20,9 @@ export default function FilmList() {
         cs: 'cz',
         es: 'es',
         ko: 'kr',
-        ta: 'in'
+        ta: 'in',
+        sv: 'se',
+        nl: 'nl'
     }
 
     // test per array

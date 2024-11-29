@@ -30,7 +30,7 @@ export const CallResultsProvider = ({ children }) => {
 
         console.log('rotta scelta:', route);
 
-        // funzione fetch con valore query
+        // funzione fetch con valori personalizzati
         fetch(`${url}/${route}?api_key=${key}&query=${query}`)
             .then(res => res.json())
             .then(data => { setMovies(data.results) })
