@@ -4,6 +4,11 @@ import { useContext } from "react";
 import CallResultsContext from "../contexts/CallResultsContext.jsx";
 import Flag from "react-world-flags";
 
+// icone
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons"; // stella piena
+import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // stella vuota
+
 export default function FilmList() {
     const { movies } = useContext(CallResultsContext); // variabile accesso a context
     const { searchType } = useContext(CallResultsContext); // variabile cambio tipo
@@ -53,6 +58,8 @@ export default function FilmList() {
                     </p>
                     <p>
                         Voto: {movie.vote_average}
+                        stella piena: <FontAwesomeIcon icon={faStarFull} style={{color: "#FFD43B",}} />
+                        stella vuota: <FontAwesomeIcon icon={faStarEmpty} style={{color: "#FFD43B",}} />
                     </p>
                     <div className="copertina">
                         <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
