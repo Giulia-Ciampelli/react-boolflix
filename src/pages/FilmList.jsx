@@ -26,7 +26,7 @@ export default function FilmList() {
     // test per array
     if(!Array.isArray(movies)) {
         return <div>
-            No results found
+            Nessun risultato
         </div>
     }
 
