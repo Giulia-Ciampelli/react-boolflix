@@ -82,7 +82,7 @@ main {
 
                 /* RICORDA: modificalo dopo */
                 ul {
-                    
+
                     li {
                         text-decoration: none;
                         color: var(--light-colour);
@@ -97,8 +97,13 @@ main {
 
 /* #region footer */
 footer {
+    background-color: var(--dark-colour);
+    padding: 1rem;
 
-    p {}
+    p {
+        text-align: center;
+        color: var(--success-colour);
+    }
 }
 
 /* #endregion footer */

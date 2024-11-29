@@ -3,7 +3,7 @@ export default function Footer() {
         <>
             <footer>
                 <p>
-                    questa applicazione non ti rovina l'M2!
+                    Questa applicazione non ti rovina l'M2!
                 </p>
             </footer>
         </>
