@@ -6,7 +6,8 @@ import Flag from "react-world-flags";
 
 export default function FilmList() {
     const { movies } = useContext(CallResultsContext); // variabile accesso a context
-    const {searchType} = useContext(CallResultsContext); // variabile cambio tipo
+    const { searchType } = useContext(CallResultsContext); // variabile cambio tipo
+    const imgUrl = 'https://image.tmdb.org/t/p/w500'; // variabile url immagine
 
     // mappa bandiere
     const languageFlags = {
@@ -26,7 +27,7 @@ export default function FilmList() {
     }
 
     // test per array
-    if(!Array.isArray(movies)) {
+    if (!Array.isArray(movies)) {
         return <div>
             Nessun risultato
         </div>
@@ -48,11 +49,14 @@ export default function FilmList() {
                     <p>
                         {/* sostituisci con flag, togli lo style dopo */}
                         Lingua: {movie.original_language}
-                        Lingua: <Flag code={languageFlags[movie.original_language]} style={{height: 20}}/>
+                        Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
                     </p>
                     <p>
                         Voto: {movie.vote_average}
                     </p>
+                    <div className="copertina">
+                        <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
+                    </div>
                 </li>))}
             </ul>
             {/* <Link to={FilmCard}>

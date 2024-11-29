@@ -28,8 +28,6 @@ export const CallResultsProvider = ({ children }) => {
 
         const route = searchType === 'movie' ? movieRoute : seriesRoute; // variabile rotta dinamica
 
-        console.log('rotta scelta:', route);
-
         // funzione fetch con valori personalizzati
         fetch(`${url}/${route}?api_key=${key}&query=${query}`)
             .then(res => res.json())
