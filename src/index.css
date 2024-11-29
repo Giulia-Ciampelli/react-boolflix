@@ -79,15 +79,7 @@ main {
 
             .card {
                 width: calc(100% / 4);
-
-                /* RICORDA: modificalo dopo */
-                ul {
-
-                    li {
-                        text-decoration: none;
-                        color: var(--light-colour);
-                    }
-                }
+                color: var(--light-colour);
             }
         }
     }
