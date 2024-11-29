@@ -13,7 +13,7 @@ export default function SearchBar() {
         setQuery(e.target.value);
     }
 
-    // funxione onChange select
+    // funzione onChange select
     const handleTypeChange = (e) => {
         setSearchType(e.target.value);
         changeSearchType(e.target.value);
