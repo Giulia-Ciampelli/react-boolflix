@@ -74,15 +74,40 @@ main {
         width: 90%;
         margin: auto;
 
+        h1 {
+            color: var(--light-colour);
+            padding: 1rem 0;
+        }
+
         .row {
             display: flex;
             flex-wrap: wrap;
 
             .card {
                 width: calc(100% / 4);
+                height: 550px;
                 color: var(--light-colour);
+                position: relative;
 
-                .poster {}
+                .poster {
+                    position: absolute;
+                }
+
+                .poster:hover {
+                    display: none;
+                }
+
+                .description {
+                    background-color: var(--dark-colour);
+                    max-width: 342px;
+                    height: 95%;
+                    padding: .75rem;
+
+                    p {
+                        padding: .5rem 0;
+                        overflow: auto;
+                    }
+                }
             }
         }
     }
