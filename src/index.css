@@ -92,10 +92,13 @@ main {
                 height: 550px;
                 color: var(--light-colour);
                 position: relative;
+                display: flex;
+                justify-content: center;
 
                 .poster {
                     position: absolute;
                     height: 100%;
+                    transition: opacity 1s;
 
                     img {
                         height: 100%;
@@ -103,7 +106,7 @@ main {
                 }
 
                 .poster:hover {
-                    display: none;
+                    opacity: 0.0;
                 }
 
                 .description {
