@@ -63,8 +63,6 @@ export default function FilmList() {
                                         Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
                                     </p>
                                     <p>
-                                        {/* sostituisci con flag, togli lo style dopo */}
-                                        Lingua: {movie.original_language}
                                         Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
                                     </p>
                                     <p>
