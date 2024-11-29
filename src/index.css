@@ -58,6 +58,8 @@ header {
                 border: none;
                 border-radius: .25rem;
                 background-color: var(--boolflix-red);
+                color: var(--light-colour);
+                font-weight: bold;
             }
         }
     }
@@ -69,6 +71,7 @@ header {
 main {
     background-color: var(--grey-colour);
     min-height: 90vh;
+    padding: 2rem 0;
 
     .container {
         width: 90%;

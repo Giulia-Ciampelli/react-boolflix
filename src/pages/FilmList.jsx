@@ -22,6 +22,7 @@ export default function FilmList() {
         ja: 'jp',
         ru: 'ru',
         zh: 'cn',
+        cn: 'cn',
         de: 'de',
         cs: 'cz',
         es: 'es',
@@ -81,7 +82,10 @@ export default function FilmList() {
                                     ))}
                                 </p>
                                 <p>
-                                    Overview: {movie.overview}
+                                    Total votes: {movie.vote_count}
+                                </p>
+                                <p>
+                                    Overview: {movie.overview ? movie.overview : 'not available'}
                                 </p>
                             </div>
                         </div>)
