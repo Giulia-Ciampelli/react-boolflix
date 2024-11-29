@@ -68,6 +68,7 @@ header {
 /* #region main */
 main {
     background-color: var(--grey-colour);
+    min-height: 90vh;
 
     .container {
         width: 90%;
@@ -80,6 +81,8 @@ main {
             .card {
                 width: calc(100% / 4);
                 color: var(--light-colour);
+
+                .poster {}
             }
         }
     }

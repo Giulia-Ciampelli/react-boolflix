@@ -53,7 +53,6 @@ export default function FilmList() {
 
                         // calcolo stelle vuote
                         const emptyStars = 5 - starVote;
-
                         return (<div className="card" key={movie.id}>
                             <p>
                                 Title: {searchType === 'movie' ? movie.title : movie.name}
@@ -80,7 +79,7 @@ export default function FilmList() {
                             <p>
                                 Overview: {movie.overview}
                             </p>
-                            <div className="copertina">
+                            <div className="poster">
                                 <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
                             </div>
                         </div>)

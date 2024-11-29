@@ -24,7 +24,7 @@ export const CallResultsProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        if(query === '') return;
+        if (query === '') return;
 
         const route = searchType === 'movie' ? movieRoute : seriesRoute; // variabile rotta dinamica
 
@@ -39,7 +39,7 @@ export const CallResultsProvider = ({ children }) => {
 
     // ritorna il provider con cui incapsulare l'app (o i componenti dell'app)
     return (
-        <CallResultsContext.Provider value={{ movies, setQueryInContext, changeSearchType }}>
+        <CallResultsContext.Provider value={{ movies, searchType, setQueryInContext, changeSearchType }}>
             {children}
         </CallResultsContext.Provider>
     )
