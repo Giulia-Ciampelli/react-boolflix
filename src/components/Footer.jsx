@@ -1,4 +1,3 @@
-// qui sarà il footer
 export default function Footer() {
     return (
         <>

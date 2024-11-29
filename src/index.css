@@ -7,6 +7,13 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+:root {
+    --dark-colour: #231F20;
+    --boolflix-red: #DB202C;
+    --light-colour: #FFFCF9;
+    --success-colour: #B1EDE8;
+}
 /* #endregion common */
 
 /* #region header */
@@ -62,7 +69,7 @@ main {
 footer {
 
     p {
-        
+
     }
 }
 /* #endregion footer */
