@@ -31,7 +31,7 @@ export default function SearchBar() {
                 <input type="search"
                     name="search"
                     id="search"
-                    placeholder="Scrivi il titolo di un film..."
+                    placeholder="Insert title here..."
                     value={query}
                     onChange={handleSearchChange} />
                 <select
@@ -42,11 +42,11 @@ export default function SearchBar() {
                         Film
                     </option>
                     <option value="tv">
-                        Serie TV
+                        TV Series
                     </option>
                 </select>
                 <button type="submit">
-                    Cerca
+                    Search
                 </button>
             </form>
         </>

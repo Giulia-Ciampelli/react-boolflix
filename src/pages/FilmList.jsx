@@ -42,7 +42,7 @@ export default function FilmList() {
         <>
             <div className="container">
                 <h1>
-                    {searchType === 'movie' ? 'Film trovati:' : 'Serie TV trovate:'}
+                    {searchType === 'movie' ? 'Movies found:' : 'TV Series found:'}
                 </h1>
                 <div className="row">
 
@@ -56,16 +56,16 @@ export default function FilmList() {
 
                         return (<div className="card" key={movie.id}>
                             <p>
-                                Titolo: {searchType === 'movie' ? movie.title : movie.name}
+                                Title: {searchType === 'movie' ? movie.title : movie.name}
                             </p>
                             <p>
-                                Titolo originale: {searchType === 'movie' ? movie.original_title : movie.original_name}
+                                Original title: {searchType === 'movie' ? movie.original_title : movie.original_name}
                             </p>
                             <p>
-                                Lingua: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
+                                Language: <Flag code={languageFlags[movie.original_language]} style={{ height: 20 }} />
                             </p>
                             <p>
-                                Voto:
+                                Vote:
 
                                 {/* rendering stelle piene */}
                                 {Array.from({ length: starVote }).map((_, index) => (
@@ -76,6 +76,9 @@ export default function FilmList() {
                                 {Array.from({ length: emptyStars }).map((_, index) => (
                                     <FontAwesomeIcon key={starVote + index} icon={faStarEmpty} style={{ color: "#FFD43B", }} />
                                 ))}
+                            </p>
+                            <p>
+                                Overview: {movie.overview}
                             </p>
                             <div className="copertina">
                                 <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
