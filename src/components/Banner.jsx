@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 // context
 import CallPopularsContext from "../contexts/CallPopularsContext.jsx";
+import CallFlagsContext from "../contexts/CallFlagsContext.jsx";
 
 // stile
 import style from '../components/Banner.module.css';
@@ -13,21 +14,9 @@ import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons"; // ste
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // stella vuota
 
 export default function Banner() {
-    const { populars } = useContext(CallPopularsContext);
+    const { populars } = useContext(CallPopularsContext); // context film popolari
+    const { flagCode } = useContext(CallFlagsContext) // context flag
     const imgUrl = 'https://image.tmdb.org/t/p/w342'; // variabile url immagine
-
-    // mappa bandiere
-    const languageFlags = {
-        en: 'gb',
-        ja: 'jp',
-        zh: 'cn',
-        cs: 'cz',
-        ko: 'kr',
-        ta: 'in',
-    }
-
-    // funzione per altre bandiere
-    const flagCode = (langCode) => languageFlags[langCode] || langCode;
 
     return (
         <section className={style.banner}>

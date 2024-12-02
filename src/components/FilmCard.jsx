@@ -1,3 +1,8 @@
+import { useContext } from "react";
+
+// context
+import CallFlagsContext from "../contexts/CallFlagsContext.jsx";
+
 // icone
 import Flag from "react-world-flags";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,19 +11,7 @@ import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // 
 
 export default function filmCard({ movie, searchType }) {
     const imgUrl = 'https://image.tmdb.org/t/p/w342'; // variabile url immagine
-
-    // mappa bandiere
-    const languageFlags = {
-        en: 'gb',
-        ja: 'jp',
-        zh: 'cn',
-        cs: 'cz',
-        ko: 'kr',
-        ta: 'in'
-    }
-
-    // funzione per altre bandiere
-    const flagCode = (langCode) => languageFlags[langCode] || langCode;
+    const { flagCode } = useContext(CallFlagsContext) // context flag
 
     // calcolo per voto
     const starVote = Math.ceil(movie.vote_average / 2);
