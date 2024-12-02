@@ -43,6 +43,7 @@ export default function FilmList() {
     }
 
     const bannerDisplay = query === '';
+    const titleDisplay = query !== '';
 
     // ricorda di mettere il banner da qualche parte
 
@@ -52,9 +53,10 @@ export default function FilmList() {
                 {bannerDisplay && <Banner />}
 
                 {/* RICORDA: modifica quando farai le rotte */}
-                <h1>
-                    {searchType === 'movie' ? 'Movies found:' : 'TV Series found:'}
-                </h1>
+                {titleDisplay &&
+                    (<h1>
+                        {searchType === 'movie' ? 'Movies found:' : 'TV Series found:'}
+                    </h1>)}
                 <div className="row">
 
                     {movies.map(movie => {
