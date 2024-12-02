@@ -10,7 +10,7 @@ export default function Header() {
         <>
             <header>
                 <div className="logo">
-                    <img src={HeaderLogo} alt="" />
+                    <img src={HeaderLogo} alt="logo BoolFlix" />
                 </div>
                 <div className="search">
                     <SearchBar />
