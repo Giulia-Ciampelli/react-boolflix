@@ -19,20 +19,15 @@ export default function Banner() {
     // mappa bandiere
     const languageFlags = {
         en: 'gb',
-        it: 'it',
-        fr: 'fr',
         ja: 'jp',
-        ru: 'ru',
         zh: 'cn',
-        cn: 'cn',
-        de: 'de',
         cs: 'cz',
-        es: 'es',
         ko: 'kr',
         ta: 'in',
-        sv: 'se',
-        nl: 'nl'
     }
+
+    // funzione per altre bandiere
+    const flagCode = (langCode) => languageFlags[langCode] || langCode;
 
     return (
         <section className={style.banner}>
@@ -61,7 +56,8 @@ export default function Banner() {
                                 Original title: {popular.original_title}
                             </p>
                             <p>
-                                Language: <Flag code={languageFlags[popular.original_language]} style={{ height: 12 }} />
+                                Language:
+                                <Flag code={flagCode(popular.original_language)} style={{ height: 12 }} />
                             </p>
                             <p>
                                 Vote:

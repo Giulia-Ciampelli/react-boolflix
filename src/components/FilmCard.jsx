@@ -4,26 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons"; // stella piena
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // stella vuota
 
-// mappa bandiere
-const languageFlags = {
-    en: 'gb',
-    it: 'it',
-    fr: 'fr',
-    ja: 'jp',
-    ru: 'ru',
-    zh: 'cn',
-    cn: 'cn',
-    de: 'de',
-    cs: 'cz',
-    es: 'es',
-    ko: 'kr',
-    ta: 'in',
-    sv: 'se',
-    nl: 'nl'
-}
-
 export default function filmCard({ movie, searchType }) {
     const imgUrl = 'https://image.tmdb.org/t/p/w342'; // variabile url immagine
+
+    // mappa bandiere
+    const languageFlags = {
+        en: 'gb',
+        ja: 'jp',
+        zh: 'cn',
+        cs: 'cz',
+        ko: 'kr',
+        ta: 'in'
+    }
+
+    // funzione per altre bandiere
+    const flagCode = (langCode) => languageFlags[langCode] || langCode;
 
     // calcolo per voto
     const starVote = Math.ceil(movie.vote_average / 2);
@@ -44,7 +39,7 @@ export default function filmCard({ movie, searchType }) {
                 <p>Original title: {searchType === 'movie' ? movie.original_title : movie.original_name}</p>
                 <p>
                     Language:
-                    <Flag code={languageFlags[movie.original_language]} style={{ height: 12 }} />
+                    <Flag code={flagCode(movie.original_language)} style={{ height: 12 }} />
                 </p>
                 <p>
                     Vote:

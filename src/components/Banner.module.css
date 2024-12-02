@@ -47,6 +47,10 @@ main {
 
                     p {
                         padding: .5rem 0;
+
+                        img {
+                            margin: 0 .5rem;
+                        }
                     }
                 }
             }
