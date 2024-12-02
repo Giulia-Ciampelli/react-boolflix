@@ -50,6 +50,8 @@ export default function FilmList() {
         <>
             <div className="container">
                 {bannerDisplay && <Banner />}
+
+                {/* RICORDA: modifica quando farai le rotte */}
                 <h1>
                     {searchType === 'movie' ? 'Movies found:' : 'TV Series found:'}
                 </h1>

@@ -1,0 +1,57 @@
+/* stile banner */
+main {
+    background: var(--dark-colour);
+    background: linear-gradient(180deg, var(--dark-colour) 35%, var(--boolflix-red) 100%);
+
+    .banner {
+        width: 90%;
+        margin: auto;
+
+        h1 {
+            color: var(--light-colour);
+            padding: 1rem 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6rem;
+
+            .card {
+                width: calc(100% / 5);
+                height: 550px;
+                color: var(--light-colour);
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+                .poster {
+                    position: absolute;
+                    height: 100%;
+                    transition: opacity 1s;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .poster:hover {
+                    opacity: 0.0;
+                }
+
+                .description {
+                    background-color: var(--dark-colour);
+                    border: 2px solid var(--light-colour);
+                    max-width: 100%;
+                    height: 100%;
+                    padding: .75rem;
+                    overflow: hidden;
+
+                    p {
+                        padding: .5rem 0;
+                    }
+                }
+            }
+        }
+    }
+}
