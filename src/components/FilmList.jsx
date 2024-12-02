@@ -10,7 +10,7 @@ import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons"; // ste
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // stella vuota
 
 // componenti
-import Banner from "../components/Banner.jsx";
+import Banner from "./Banner.jsx";
 
 export default function FilmList() {
     const { movies } = useContext(CallResultsContext); // variabile accesso a context

@@ -6,7 +6,7 @@ import DefaulLayout from './pages/DefaultLayout';
 
 // pagine
 // import Home from './pages/Home.jsx';
-import FilmList from './pages/FilmList.jsx';
+import List from './pages/List.jsx';
 // import About from './pages/About.jsx';
 
 // context
@@ -28,7 +28,7 @@ function App() {
               <Route element={<DefaulLayout />}>
                 {/* <Route path='/' element={<Home />}/> */}
                 {/* RICORDA: cambia la rotta in /film in seguito */}
-                <Route path='/' element={<FilmList />} />
+                <Route path='/' element={<List />} />
                 {/* <Route path='/' element={<Home />}/> // questa sarà la rotta della FilmCard */}
                 {/* <Route path='/about' element={<About />}/> */}
               </Route>
