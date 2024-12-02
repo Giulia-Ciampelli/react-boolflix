@@ -69,7 +69,8 @@ header {
 
 /* #region main */
 main {
-    background-color: var(--grey-colour);
+    background: var(--dark-colour);
+    background: linear-gradient(180deg, var(--dark-colour) 35%, var(--boolflix-red) 100%);
     min-height: 90vh;
     padding: 2rem 0;
 

@@ -1,7 +1,5 @@
 /* stile banner */
 main {
-    background: var(--dark-colour);
-    background: linear-gradient(180deg, var(--dark-colour) 35%, var(--boolflix-red) 100%);
 
     .banner {
         width: 90%;
