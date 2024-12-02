@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
 // context
-import CallResultsContext from "../contexts/CallResultsContext.jsx";
+import CallPopularsContext from "../contexts/CallPopularsContext.jsx";
 
 // icone
 import Flag from "react-world-flags";
@@ -9,12 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faStarFull } from "@fortawesome/free-solid-svg-icons"; // stella piena
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons"; // stella vuota
 
-// componenti
-import Banner from "../components/Banner.jsx";
-
-export default function FilmList() {
-    const { movies } = useContext(CallResultsContext); // variabile accesso a context
-    const { searchType, query } = useContext(CallResultsContext); // variabile cambio tipo
+export default function Banner() {
+    const { populars } = useContext(CallPopularsContext);
     const imgUrl = 'https://image.tmdb.org/t/p/w342'; // variabile url immagine
 
     // mappa bandiere
@@ -35,47 +31,34 @@ export default function FilmList() {
         nl: 'nl'
     }
 
-    // test per array
-    if (!Array.isArray(movies)) {
-        return <div>
-            Nessun risultato
-        </div>
-    }
-
-    const bannerDisplay = query === '';
-
-    // ricorda di mettere il banner da qualche parte
-
     return (
-        <>
-            <div className="container">
-                {bannerDisplay && <Banner />}
-                <h1>
-                    {searchType === 'movie' ? 'Movies found:' : 'TV Series found:'}
-                </h1>
-                <div className="row">
-
-                    {movies.map(movie => {
+        <section className="banner">
+            <h1>
+                Most popular movies:
+            </h1>
+            <div className="row">
+                <div className="card">
+                    {populars.map(popular => {
 
                         // calcolo per voto
-                        const starVote = Math.ceil(movie.vote_average / 2);
+                        const starVote = Math.ceil(popular.vote_average / 2);
 
                         // calcolo stelle vuote
                         const emptyStars = 5 - starVote;
 
-                        return (<div className="card" key={movie.id}>
+                        return (<div className="card" key={popular.id}>
                             <div className="poster">
-                                <img src={`${imgUrl}${movie.poster_path}`} alt={searchType === 'movie' ? movie.title : movie.name} />
+                                <img src={`${imgUrl}${popular.poster_path}`} alt={searchType === 'movie' ? popular.title : popular.name} />
                             </div>
                             <div className="description">
                                 <p>
-                                    Title: {searchType === 'movie' ? movie.title : movie.name}
+                                    Title: {searchType === 'movie' ? popular.title : popular.name}
                                 </p>
                                 <p>
-                                    Original title: {searchType === 'movie' ? movie.original_title : movie.original_name}
+                                    Original title: {searchType === 'movie' ? popular.original_title : popular.original_name}
                                 </p>
                                 <p>
-                                    Language: <Flag code={languageFlags[movie.original_language]} style={{ height: 12 }} />
+                                    Language: <Flag code={languageFlags[popular.original_language]} style={{ height: 12 }} />
                                 </p>
                                 <p>
                                     Vote:
@@ -91,19 +74,16 @@ export default function FilmList() {
                                     ))}
                                 </p>
                                 <p>
-                                    Total votes: {movie.vote_count}
+                                    Total votes: {popular.vote_count}
                                 </p>
                                 <p>
-                                    Overview: {movie.overview ? movie.overview : 'not available'}
+                                    Overview: {popular.overview ? popular.overview : 'not available'}
                                 </p>
                             </div>
                         </div>)
                     })}
                 </div>
             </div>
-            {/* <Link to={FilmCard}>
-                filmCard
-            </Link> */}
-        </>
+        </section>
     )
 }

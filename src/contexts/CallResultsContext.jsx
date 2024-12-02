@@ -39,7 +39,7 @@ export const CallResultsProvider = ({ children }) => {
 
     // ritorna il provider con cui incapsulare l'app (o i componenti dell'app)
     return (
-        <CallResultsContext.Provider value={{ movies, searchType, setQueryInContext, changeSearchType }}>
+        <CallResultsContext.Provider value={{ movies, searchType, setQueryInContext, changeSearchType, query }}>
             {children}
         </CallResultsContext.Provider>
     )
